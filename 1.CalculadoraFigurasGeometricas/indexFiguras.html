@@ -10,6 +10,42 @@
 
 </head>
 <body>
-    <h1>Figuras geométricas</h1>
+    <header>
+
+        <h1>Figuras geométricas</h1>
+        <p>Este es el primer taller del curso práctico de JavaScript</p>
+
+    </header>
+
+    <article>
+        <h2>Cuadrado</h2>
+        <form class="calculosCuadrado" action="">
+
+            <label for="inputCuadrado">Calcula el pérímetro y área de un cuadrado</label><br><br>
+            <input id="inputCuadrado" placeholder="¿Cuanto mide un lado?" type="number">
+            
+            <button type="button" onclick="calcularPerimetroCuadrado()">Calcular el perímetro</button>
+            
+            <button type="button" onclick="calcularAreaCuadrado()">Calcular el área</button>
+        </form>
+    </article>
+
+    <article>
+        <h2>Triángulo</h2>
+        <form class="calculosTriangulo" action="">
+
+            <label for="inputTriangulo">Calcula el pérímetro y área de un Triángulo</label><br><br>
+
+            <input id="inputTriangulo1" placeholder="¿Cuanto mide el lado 1?" type="number"><br><br>
+            <input id="inputTriangulo2" placeholder="¿Cuanto mide el lado 2?" type="number"><br><br>
+            <input id="inputTrianguloB" placeholder="¿Cuanto mide la base?" type="number"><br><br>
+            <input id="inputTrianguloH" placeholder="¿Cuanto mide la altura?" type="number"><br><br>
+            
+            <button type="button" onclick="calcularPerimetroTriangulo()">Calcular el perímetro</button>
+            
+            <button type="button" onclick="calcularAreaTriangulo()">Calcular el área</button>
+        </form>
+    </article>
+
 </body>
 </html>

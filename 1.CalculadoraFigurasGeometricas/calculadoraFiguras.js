@@ -1,50 +1,88 @@
-// Código para los cálculos en cuadrados
+//------------------------- Calculo de figuras geométricas con funciones -------------------------------------//
 
-console.group("Cuadrados");
+/* Cálculos cuadrado */
 
-var lado = 5;
-var perimetro = lado * 4;
-var area = Math.pow(lado,2);
+function perimetroCuadrado(ladoCuadrado) {
+    return ladoCuadrado * 4;
+}
 
-console.log(`Los lados del cuadrado miden: ${lado} cm`);
+function areaCuadrado(ladoCuadrado) {
+    return Math.pow(ladoCuadrado,2);
+}
 
-console.log(`El perímetro del cuadrado es: ${perimetro} cm`);
+/* Cálculo trángulos */
 
-console.log(`El área del cuadrado es: ${area} cm^2`);
+function perimetroTriangulo(triangulo_lado1, triangulo_lado2, triangulo_base) {
+    return triangulo_lado1 + triangulo_lado2 + triangulo_base;
+}
 
-console.groupEnd();
+function areaTriangulo(triangulo_base, triangulo_altura) {
+    return (triangulo_base * triangulo_altura) / 2;
+}
 
-// Código para los cálculos en triangulos
-console.group("Triangulos");
+/* Cálculo cículos */
 
-var triangulo_lado1 = 3;
-var triangulo_lado2 = 4;
-var triangulo_base = 5;
-var triangulo_altura = 7;
+function diametroCirculo(radio) {
+    return radio * 2;
+}
 
-var tringuloPerimetro = triangulo_lado1 + triangulo_lado2 + triangulo_base;
-var tranguloArea = (triangulo_base * triangulo_altura) / 2;
+function circunferenciaCirculo(radio) {
+    var diametro = diametroCirculo(radio);
+    return diametro * Math.PI;
+}
 
-console.log(`Los lados del triángulo son: ${triangulo_lado1}, ${triangulo_lado2}, ${triangulo_base}`);
-
-console.log(`El perímetro del tríangulo es: ${tringuloPerimetro} cm`);
-
-console.log(`El área del triángulo es: ${tranguloArea}`);
-
-console.groupEnd();
-
-
-// Código pra los cálculos de círculos
-console.group("Círculos")
-
-var circulo_radio = 7;
-var circulo_diametro = circulo_radio * 2;
-var PI = Math.PI;
-var circulo_cincunferencia = circulo_diametro * PI;
-var circulo_area = PI * Math.pow(circulo_radio,2);
-
-console.log(`El perímetro del círculo es = ${circulo_cincunferencia}`);
-console.log(`El área del círculo es = ${circulo_area}`);
+function areaCirculo(radio) {
+    return Math.PI * Math.pow(radio,2);
+}
 
 
-console.groupEnd();
+/* Cálculo de cuadrado con datos desde el HTML */
+
+function calcularPerimetroCuadrado() {
+
+    const input = document.getElementById("inputCuadrado");
+    const value = input.value;
+
+    const perimetro = perimetroCuadrado(value);
+    alert(perimetro);
+
+}
+    
+function calcularAreaCuadrado() {
+
+    const input = document.getElementById("inputCuadrado");
+    const value = input.value;
+
+    const area = areaCuadrado(value);
+    alert(area);
+
+}
+
+/* Cálculos de triángulo con datos desde el HTML */
+
+function calcularPerimetroTriangulo() {
+    const input1 = document.getElementById("inputTriangulo1");
+    const value1 = parseFloat(input1.value);
+
+    const input2 = document.getElementById("inputTriangulo2");
+    const value2 = parseFloat(input2.value);
+
+    const inputB = document.getElementById("inputTrianguloB");
+    const valueB = parseFloat(inputB.value);
+
+
+    const perimetro = perimetroTriangulo(value1, value2, valueB);
+    alert(perimetro);
+}
+
+function calcularAreaTriangulo() {
+
+    const inputB = document.getElementById("inputTrianguloB");
+    const valueB = parseFloat(inputB.value);
+
+    const inputH = document.getElementById("inputTrianguloH");
+    const valueH = parseFloat(inputH.value);
+
+    const area = areaTriangulo(valueB, valueH);
+    alert(area);
+}
