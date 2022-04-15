@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de descuentos | Curso práctico JS Platzi</title>
+    <script src="./calculadora.js"></script>
+</head>
+<body>
+    <header>
+        <h1>
+            Calculadora de porcentajes
+        </h1>
+        <p>Este es el segundo taller del curso práctico de JS</p>
+        
+    </header>
+    <main>
+        
+        <h2>¡Aquí podrás calcular tus descuentos!</h2>
+
+        <form action="">
+
+            <label for="inputPrice">Escribe el precio de tu producto $</label>
+            <input id="inputPrice" type="number">
+
+            <br>
+
+            <label for="inputDiscount">Escribe el descuento %</label>
+            <input id="inputDiscount" type="number">
+
+            <br><br>
+
+            <button type="button" onclick="calcularCuantoPagar()">¿Cuanto tengo que pagar?</button>
+
+            <br><br>
+
+            <p id="priceToPay"></p>
+
+        </form>
+
+
+    </main>
+</body>
+</html>
