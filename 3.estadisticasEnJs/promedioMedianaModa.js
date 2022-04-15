@@ -64,3 +64,37 @@ function calculoMediana (lista) {
         }
 }
 
+/* --------- Moda algorith Starts --------- */
+
+const listaEjemplo = [
+    10,30,40,60,20,40,60,80,40,20,50,90,40,20,20,40,10,30,10,70,10,80,40,10,90,10,20,40
+];
+
+
+
+function calcularModa (lista) {
+
+    const listaCount = {};
+
+    lista.map(
+        function (valorDeLista) {
+            if (listaCount[valorDeLista]){
+                listaCount[valorDeLista] += 1;
+            } else {
+                listaCount[valorDeLista] = 1;
+            } 
+        }
+    );
+    
+    const listaArray = Object.entries(listaCount);
+    
+    const listaOrdenada = listaArray.sort(
+        function ( a , b ) {
+        return b[1] - a[1];
+    });
+    
+    const moda = listaOrdenada[0];
+
+    console.log(`La moda es: ${moda[0]} y aparece ${moda[1]} veces en la lista`);
+
+}
